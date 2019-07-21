@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <% for(var i=0; i<data.length; i++) {%>
+  <h1>case number <%= i +1%></h1>
+
+  <h1></h1>
+  <table style="width:100%">
+    <tr>
+      <th>Rank</th>
+      <th>Player</th>
+      <th>Score</th>
+    </tr>
+    <% for(var j=0; j<data[i].length; j++) {%>
+    <tr>
+      <td><%= data[i][j].rank %></td>
+      <td><%= data[i][j].player %></td>
+      <td><%= data[i][j].score%></td>
+    </tr>
+    <% }%>
+  </table>
+
+
+  <% }%>
+</body>
+
 </html>
